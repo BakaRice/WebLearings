@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            width: 50%;
+        }
+        .card{
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .card  p{
+            padding: 10px;
+        }
+        .card a{
+            padding: 10px;
+            border-radius:5px;
+            text-decoration: none;
+            background-color: #ff5f44;
+            color:white;
+        }
+        .card a:hover{
+            background-color: red;
+        }
+        .card:hover{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1), 0 6px 20px 0 rgba(0,0,0,25);
+            transform: translate(5px,5px);
+        }
+
+        .content{
+            border-radius: 50%;
+            text-align: justify;
+        }
+        .header img{
+            border-radius: 50%;
+            align-content: center;
+            opacity: 0.4;
+        }
+        div.card:hover img{
+              opacity: 1.0;
+          }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <div class="header">
+            <img src="https://i.pravatar.cc/250?img=1" alt="face">
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta ex laudantium ratione sint.
+                Aperiam dignissimos enim eos ex laudantium maxime neque nobis nulla odio rem soluta totam, unde
+                voluptatem voluptates, voluptatum!</p>
+            <a href="">Read More</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="header">
+            <img src="https://i.pravatar.cc/250?img=2" alt="face">
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta ex laudantium ratione sint.
+                Aperiam dignissimos enim eos ex laudantium maxime neque nobis nulla odio rem soluta totam, unde
+                voluptatem voluptates, voluptatum!</p>
+            <a href="">Read More</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="header">
+            <img src="https://i.pravatar.cc/250?img=3" alt="face">
+        </div>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dicta ex laudantium ratione sint.
+                Aperiam dignissimos enim eos ex laudantium maxime neque nobis nulla odio rem soluta totam, unde
+                voluptatem voluptates, voluptatum!</p>
+            <a href="">Read More</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
