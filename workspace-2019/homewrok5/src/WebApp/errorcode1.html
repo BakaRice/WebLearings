@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        /* 初始化设置 */
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .container{
+            width: 20%;
+            margin-top: 50px;
+        }
+        .container .main-button .account-circle,
+        .container .second-button ul .edit,
+        .container .second-button ul .color-lens,
+        .container .second-button ul .delete-forever{
+            width: 100%;
+            text-align: center;
+            height: 50px;
+            cursor:pointer;
+        }
+        .container .main-button .account-circle i{
+            font-size: 50px;
+            color: #4664ff;
+
+        }
+
+        .container .second-button ul .edit,
+        .container .second-button ul .color-lens,
+        .container .second-button ul .delete-forever{
+            height: 35px;
+        }
+        .container .second-button ul .edit i,
+        .container .second-button ul .color-lens i{
+            font-size: 35px;
+            color: #4664ff;
+        }
+
+        .container .second-button ul .delete-forever i{
+            font-size: 35px;
+            color: red;
+        }
+
+        .container .main-button .account-circle i{
+
+            -webkit-transition: -webkit-transform 500ms;
+            transition: transform 500ms;
+        }
+        .container .main-button .account-circle i:hover{
+            -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+    </style>
+    <script>
+        $(function () {
+            //初始化隐藏的属性
+            $('.container .main-button .account-circle i:last').hide();
+            $('.container .second-button').hide();
+
+            //鼠标移入事件悬停的展示隐藏的属性
+            hiddenMainButton();
+
+            //鼠标移出事件隐藏属性
+            showMainButton();
+
+
+        });
+
+
+        function hiddenMainButton(){
+            $('.container .main-button .account-circle i:first').mouseenter(function () {
+                $(this).hide();
+
+                $('.container .main-button .account-circle i:last').show();
+
+                //二级菜单展示
+                $('.container .second-button').show();
+            });
+
+        }
+
+        function showMainButton(){
+            $('.container .main-button .account-circle i:last').mouseleave(function () {
+                //main按钮隐藏
+                $(this).hide();
+
+                $('.container .main-button .account-circle i:first').show();
+
+                //二级菜单隐藏
+                isMouseOnSeoncedButton();
+
+                //$('.container .second-button').hide();
+            });
+        }
+
+        function isMouseOnSeoncedButton() {
+            $('.container .second-button').mouseenter(function () {
+                $('.container .main-button .account-circle i:last').show();
+                $('.container .main-button .account-circle i:first').hide();
+            });
+
+            $('.container .second-button').mouseleave(function () {
+                $('.container .main-button .account-circle i:last').hide();
+                $('.container .main-button .account-circle i:first').show();
+                $('.container .second-button').hide();
+            });
+        }
+
+    </script>
+</head>
+<body>
+<div class="container">
+    <div class="main-button">
+        <div class="account-circle">
+            <i class="material-icons">account_circle</i>
+            <i class="material-icons">remove</i>
+        </div>
+    </div>
+    <div class="second-button">
+        <ul>
+            <li class="edit">
+                <i class="material-icons">edit</i>
+            </li>
+            <li class="color-lens">
+                <i class="material-icons">color_lens</i>
+            </li>
+            <li class="delete-forever">
+                <i class="material-icons">delete_forever</i>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

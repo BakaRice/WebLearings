@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#show").mouseenter(function(){
+                $("#show").text('do_not_disturb_on');
+                $(".small_item").show(50);
+
+            });
+            $(".nav_icon").mouseleave(function(){
+            },function(){
+                $("#show").text('account_circle');
+                $(".small_item").hide();
+            });
+        });
+    </script>
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0;
+        }
+        .container{
+            display: flex;
+        }
+        .nav_icon{
+            width: min-content;
+                 }
+        .nav_icon #show{
+            transition: transform 0.3s;
+        }
+        .nav_icon:hover #show{
+            transform:rotate(180deg);
+        }
+
+        .item a i{
+            font-size: 400%;
+            color:deepskyblue;
+        }
+        .small_item a i{
+            font-size: 300%;
+            color:deepskyblue;
+        }
+        .item_r a i{
+            font-size: 250%;
+            color:red;
+        }
+        .main{
+            border: 1px solid red;
+            margin-left: 7%;
+        }
+        .main p{
+            font-size: 100px;
+            text-align: justify;
+        }
+
+    </style>
+</head>
+
+<body>
+<div>
+    <div class="nav_icon">
+        <div class="item">
+            <a  href="#"><i id="show" class="material-icons">account_circle</i></a>
+        </div>
+        <div class="small_item" hidden>
+            <div class="item_s">
+                <a href="#"><i class="material-icons">edit</i></a>
+            </div>
+            <div class="item_s">
+                <a href="#"><i class="material-icons">color_lens</i></a>
+            </div>
+            <div class="item_r">
+                <a href="#"><i class="material-icons">delete_forever</i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

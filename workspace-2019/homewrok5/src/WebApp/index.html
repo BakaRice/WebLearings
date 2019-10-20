@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script TYPE="text/javascript">
+        $(document).ready(function() {
+            $("#show").click(function () {
+                $(".backglass").fadeIn();
+                $(".alertContent").fadeIn(100);//???这里还是明白怎么渐入同时移位置 迷惑行为
+                $(".alertContent").animate({top:"+=30px"});
+
+            });
+
+            $("#close").click(function () {
+                $(".alertContent").animate({top:"-=30px"});
+                $(".alertContent").fadeOut(300);
+                $(".backglass").fadeOut(300);
+            });
+            $(".backglass").click(function () {
+                $(".alertContent").animate({top:"-=30px"});
+                $(".alertContent").fadeOut(300);
+                $(".backglass").fadeOut(300);
+            });
+        })
+    </script>
+    <title>Title</title>
+    <style>
+        .container{
+        z-index: -1;
+        }
+        .alertContent{
+            position: absolute;
+            border-radius: 5px;
+            width: 50%;
+            left: 25%;
+            top: 25%;
+            background-color:white;
+            z-index: 1;
+            box-shadow: 10px 10px 5px #888888;
+        }
+        .alertContent div{
+            border-bottom: 1px solid grey;
+            padding: 5%;
+
+        }
+        .alertContent .footer button{
+            background-color: red;
+            padding: 20px;
+            border-radius: 20%;
+        }
+        .backglass{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color:rgba(80,80,80,0.2);
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam consequuntur dignissimos et eveniet exercitationem facilis, fuga harum laborum modi molestias nobis odio perferendis quo rem soluta veniam vitae voluptate!
+    </div>
+    <div class="button">
+        <button id="show">点击激活状态框</button>
+    </div>
+</div>
+
+<div><!--状态栏块-->
+    <div class="alertContent" HIDDEN>
+        <div class="header">
+            标题
+        </div>
+        <div class="container">
+            Lorem ipsum dolor sit.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim explicabo illo necessitatibus nihil quibusdam vel voluptatum. Aspernatur dignissimos, distinctio doloribus error illo ipsam quae saepe. Laboriosam saepe sapiente sed tenetur!
+            Lorem ipsum dolor sit.lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim explicabo illo necessitatibus nihil quibusdam vel voluptatum. Aspernatur dignissimos, distinctio doloribus error illo ipsam quae saepe. Laboriosam saepe sapiente sed tenetur!
+          </div>
+        <div class="footer">
+            <button id="close">CLOSE</button>
+        </div>
+
+    </div>
+    <div class="backglass" HIDDEN><!--毛玻璃块--></div>
+</div>
+</body>
+</html>
